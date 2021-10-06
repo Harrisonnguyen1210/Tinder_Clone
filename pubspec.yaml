@@ -29,6 +29,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  font_awesome_flutter: ^9.1.0
+  flutter_tindercard:
+      git:
+        url: https://github.com/ShaunRain/flutter_tindercard.git
 
 
   # The following adds the Cupertino Icons font to your application.
