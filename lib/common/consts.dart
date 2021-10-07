@@ -24,3 +24,15 @@ const interactionIconSizes = [
   0.06,
   0.08,
 ];
+
+const interactionIconTypes = [
+  InteractionType.SWIPE_LEFT,
+  InteractionType.REFRESH,
+  InteractionType.SWIPE_RIGHT,
+];
+
+enum InteractionType {
+  SWIPE_LEFT,
+  SWIPE_RIGHT,
+  REFRESH,
+}
