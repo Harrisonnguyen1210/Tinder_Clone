@@ -36,3 +36,7 @@ enum InteractionType {
   SWIPE_RIGHT,
   REFRESH,
 }
+
+// API
+const baseUrl = 'https://dummyapi.io/data/v1/';
+const appId = '615cb0c09b21eb9a6f39bdb4';
