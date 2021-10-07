@@ -9,6 +9,7 @@ class TinderCardController extends GetxController {
   final cardController = CardController();
   var userList = <User>[].obs;
   var isLoading = false.obs;
+  var currentSelectedIndex = 0;
 
   @override
   void onInit() {
@@ -26,14 +27,13 @@ class TinderCardController extends GetxController {
   }
 
   void interactWithCard(InteractionType interactionType) {
+    if (isLoading.value) return;
     switch (interactionType) {
       case InteractionType.SWIPE_LEFT:
         cardController.triggerLeft();
-        updateOnSwipeCardLeft();
         break;
       case InteractionType.SWIPE_RIGHT:
         cardController.triggerRight();
-        updateOnSwipeCardRight();
         break;
       case InteractionType.REFRESH:
         refreshCard();
@@ -41,9 +41,27 @@ class TinderCardController extends GetxController {
     }
   }
 
-  void updateOnSwipeCardLeft() {}
+  void updateOnSwipeCardLeft() {
+    currentSelectedIndex++;
+    if (currentSelectedIndex == userList.length - 1) {
+      refreshCard();
+    }
+  }
 
-  void updateOnSwipeCardRight() {}
+  void updateOnSwipeCardRight() {
+    currentSelectedIndex++;
+    if (currentSelectedIndex == userList.length - 1) {
+      refreshCard();
+    }
+    userList[currentSelectedIndex].updateLike(true);
+  }
 
-  void refreshCard() {}
+  void refreshCard() {
+    currentSelectedIndex = 0;
+    _fetchUsers();
+  }
+
+  List<User> getLikedUser() {
+    return userList.where((user) => user.liked == true).toList();
+  }
 }

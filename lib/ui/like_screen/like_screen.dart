@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tinder_clone/common/consts.dart';
-import 'package:tinder_clone/dummy_data/dummy_data.dart';
+import 'package:tinder_clone/controllers/controllers.dart';
 import 'package:tinder_clone/ui/like_screen/like_card.dart';
 
 class LikeScreen extends StatelessWidget {
-  const LikeScreen({Key? key}) : super(key: key);
+  LikeScreen({Key? key}) : super(key: key);
+  final TinderCardController tinderCardController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +33,9 @@ class LikeScreen extends StatelessWidget {
                 crossAxisSpacing: 8.0,
                 mainAxisSpacing: 8.0,
                 children: List.generate(
-                  userList.length,
+                  tinderCardController.getLikedUser().length,
                   (index) => LikeCard(
-                    user: userList[index],
+                    user: tinderCardController.getLikedUser()[index],
                   ),
                 ),
               ),

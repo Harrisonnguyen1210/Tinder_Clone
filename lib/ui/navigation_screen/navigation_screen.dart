@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tinder_clone/common/palette.dart';
+import 'package:tinder_clone/controllers/controllers.dart';
 import 'package:tinder_clone/ui/screens.dart';
 
 class NavigationScreen extends StatefulWidget {
@@ -10,6 +12,8 @@ class NavigationScreen extends StatefulWidget {
 }
 
 class _NavigationScreenState extends State<NavigationScreen> {
+  final TinderCardController tinderCardController =
+      Get.put(TinderCardController());
   late int _selectedIndex;
   final _tabIcons = [Icons.local_fire_department_rounded, Icons.star];
   final _tabIconColors = [pink, yellow];
@@ -31,7 +35,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
   Widget _getBody() {
     return IndexedStack(
       index: _selectedIndex,
-      children: [HomeScreen(), LikeScreen()],
+      children: [const HomeScreen(), LikeScreen()],
     );
   }
 

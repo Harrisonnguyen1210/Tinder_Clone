@@ -21,7 +21,8 @@ class InteractionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final TinderCardController tinderCardController = Get.find();
     return GestureDetector(
-      onTap: () => tinderCardController.interactWithCard(interactionType),
+      onTap: () =>
+          tinderCardController.interactWithCard(interactionType),
       child: Container(
         height: iconSize,
         width: iconSize,

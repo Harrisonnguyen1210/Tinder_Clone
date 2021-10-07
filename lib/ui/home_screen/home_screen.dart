@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:tinder_clone/common/consts.dart';
-import 'package:tinder_clone/controllers/tinder_card_controller.dart';
 import 'package:tinder_clone/ui/home_screen/interaction_button.dart';
 import 'package:tinder_clone/ui/home_screen/tinder_card_stack.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({Key? key}) : super(key: key);
-  final TinderCardController tinderCardController =
-      Get.put(TinderCardController());
+  const HomeScreen({Key? key}) : super(key: key);
 
   Widget _getBottomSheet(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;

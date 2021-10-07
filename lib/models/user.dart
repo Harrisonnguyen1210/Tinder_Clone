@@ -7,12 +7,14 @@ class User {
   final String lastName;
   final int age;
   final String imageUrl;
+  bool? liked;
 
-  const User({
+  User({
     required this.firstName,
     required this.lastName,
     required this.age,
     required this.imageUrl,
+    this.liked,
   });
 
   factory User.fromJson(Map<String, dynamic> json) {
@@ -23,5 +25,9 @@ class User {
       // Find a better API with good image
       imageUrl: dummyProfileImageUrls[Random().nextInt(11)],
     );
+  }
+
+  void updateLike(bool liked) {
+    this.liked = liked;
   }
 }
