@@ -14,9 +14,9 @@ class LikeScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Text(
-            '10 Likes',
-            style: TextStyle(
+          Text(
+            '${tinderCardController.getLikedUser().length} Likes',
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 18.0,
             ),

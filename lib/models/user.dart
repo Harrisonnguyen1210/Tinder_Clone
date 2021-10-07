@@ -23,7 +23,7 @@ class User {
       firstName: json['firstName'],
       lastName: json['lastName'],
       // Find a better API with good image
-      imageUrl: dummyProfileImageUrls[Random().nextInt(11)],
+      imageUrl: dummyProfileImageUrls[Random().nextInt(24)],
     );
   }
 
