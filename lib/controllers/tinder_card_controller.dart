@@ -43,17 +43,17 @@ class TinderCardController extends GetxController {
 
   void updateOnSwipeCardLeft() {
     currentSelectedIndex++;
-    if (currentSelectedIndex == userList.length - 1) {
+    if (currentSelectedIndex == userList.length) {
       refreshCard();
     }
   }
 
   void updateOnSwipeCardRight() {
+    userList[currentSelectedIndex].updateLike(true);
     currentSelectedIndex++;
-    if (currentSelectedIndex == userList.length - 1) {
+    if (currentSelectedIndex == userList.length) {
       refreshCard();
     }
-    userList[currentSelectedIndex].updateLike(true);
   }
 
   void refreshCard() {

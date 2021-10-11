@@ -13,4 +13,4 @@ Technology used:
 - Other packages such as FontAwesomeFlutter, Flutter TinderCard (for user swiping experience), Dio, etc.
 ## App Demo
 
-Link to app's demo: https://youtu.be/bFMoKqvd77g
+Link to app's demo: https://www.youtube.com/watch?v=0Yh4eh-fQrQ
